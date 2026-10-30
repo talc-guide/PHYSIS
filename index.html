@@ -530,9 +530,33 @@ main>section#partners>.wrap{width:min(94%, 1480px)}
   .ext-head{align-items:flex-start;flex-direction:column}
   .ext-media{aspect-ratio:4/3}
 }
+.core-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(10px, 1vw, 14px);
+  align-items:start;
+}
+.core-card{min-width:0;align-self:start;display:grid;grid-template-columns:minmax(110px, 30%) minmax(0,1fr)}
+.core-card .ext-media{height:auto;aspect-ratio:4/5}
+.core-card .ext-body{padding:clamp(10px, 1vw, 14px);gap:5px}
+.core-card .ext-tag{
+  min-height:2.9em;
+  display:flex;
+  align-items:flex-start;
+  font-size:clamp(10px, 0.22vw + 9px, 12px);
+  line-height:1.45;
+}
+.core-card:nth-child(4) .ext-tag{min-height:2.9em;font-size:clamp(9px, 0.12vw + 8px, 9.5px);letter-spacing:.1em}
+.core-card .ext-body h3{font-size:clamp(17px, 0.45vw + 13px, 22px);margin:0}
+.core-card .ext-body p{font-size:clamp(12px, 0.15vw + 11px, 14px);line-height:1.45;margin:0}
+.core-card details{font-size:13px}
+.core-card details summary{color:var(--gold-deep);font-weight:800;cursor:pointer}
+.core-card details p{margin-top:8px}
+@media(max-width:600px){.core-grid{grid-template-columns:1fr}}
 
 /* Full-screen sections */
 :root{--hh:70px}
+#core-team{scroll-margin-top:var(--hh)}
 .hero,main>section{
   min-height:100vh;
   min-height:100svh;
@@ -544,6 +568,8 @@ main>section{
   padding:calc(var(--hh) + clamp(16px, 4vh, 44px)) 0 clamp(24px, 5vh, 56px);
 }
 main>section>.wrap{width:min(92%, 1160px)}
+main>section#core-team{padding:calc(var(--hh) + 10px) 0 16px}
+main>section#core-team>.wrap{width:min(96%, 1480px)}
 
 /* Scroll Reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
@@ -618,7 +644,7 @@ main>section>.wrap{width:min(92%, 1160px)}
    <a href="#why">Our Story</a>
    <a href="#learn">Learning</a>
    <a href="#approach">Approach</a>
-   <a href="#team">Team</a>
+   <a href="#core-team">Team</a>
    <a href="#life">Life at PHYSIS</a>
    <a href="#parents">Parents</a>
   </nav>
@@ -815,6 +841,68 @@ main>section>.wrap{width:min(92%, 1160px)}
    <article class="ext-card">
     <div class="ext-media logo"><img src="images/healthland.png" alt="Healthland logo" loading="lazy"></div>
     <div class="ext-body"><span class="ext-tag">Health Services</span><h3>Healthland Hospitals</h3><p>Nurse and other health service providers.</p></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<!-- CORE TEAM -->
+<section class="alt" id="core-team">
+ <div class="wrap">
+  <div class="center rv">
+   <span class="label">The people behind PHYSIS</span>
+   <h2 class="title">Our Core Team</h2>
+  </div>
+  <div class="core-grid">
+   <article class="ext-card core-card rv">
+    <div class="ext-media"><img src="images/Ms%20Latha%20G.png" alt="Ms Latha G" loading="lazy"></div>
+    <div class="ext-body">
+     <span class="ext-tag">Founder &amp; Director</span>
+     <h3>Ms Latha G</h3>
+     <p>Championing child sensitivity and humanising education since 2007.</p>
+     <details>
+      <summary>Read full profile</summary>
+      <p>Latha has championed child sensitivity since 2007, bringing together postgraduate qualifications in Management and Psychology with expertise in Transactional Analysis (TA). A former consumer and market research professional, she combines respect for curriculum with a commitment to humanising education, guided by the belief that every child deserves to be a happy individual.</p>
+      <p>Nominated for Femina’s Social Impact Award for her work in Child Sensitivity, she draws on Educational and Developmental TA to support children’s learning, growth and emotional well-being. TALC - PHYSIS is her second venture in child sensitivity and education.</p>
+     </details>
+    </div>
+   </article>
+   <article class="ext-card core-card rv">
+    <div class="ext-media"><img src="images/Mobin.png" alt="Mr Mobin V Mathew" loading="lazy"></div>
+    <div class="ext-body">
+     <span class="ext-tag">Chief Executive Officer (CEO)</span>
+     <h3>Mr Mobin V Mathew</h3>
+     <p>Leads with empathy, bringing together psychology and special-education knowledge to support children and families.</p>
+     <details>
+      <summary>Read full profile</summary>
+      <p>Mobin holds a Master’s degree in Psychology, a Bachelor’s degree in Philosophy from DeSales University, Pennsylvania, and a Bachelor’s degree in Economics, Sociology and Psychology. He also holds a certification in Specific Learning Disabilities (SLD).</p>
+      <p>He brings empathy and deep respect for children and parents to his leadership, helping shape the foundation of TALC-PHYSIS. His knowledge of special education, combined with a deep understanding of children, creates meaningful possibilities for every child’s learning and growth. His skill in training and developing mentors ensures that the organisation’s ethos is carried forward as it grows.</p>
+     </details>
+    </div>
+   </article>
+   <article class="ext-card core-card rv">
+    <div class="ext-media"><img src="images/Ashith.jpeg" alt="Mr Ashith" loading="lazy"></div>
+    <div class="ext-body">
+     <span class="ext-tag">Centre Head, Harlur &amp; L&amp;D Lead</span>
+     <h3>Mr Ashith</h3>
+     <p>Brings the founders’ vision of love and acceptance into everyday practice across the organisation.</p>
+     <details>
+      <summary>Read full profile</summary>
+      <p>He brings a calm and gentle presence that resonates across the team. He has been instrumental in translating the founders’ vision of love and acceptance into everyday practice, ensuring that the ethos of TALC-PHYSIS is embodied across the organisation.</p>
+     </details>
+    </div>
+   </article>
+   <article class="ext-card core-card rv">
+    <div class="ext-media"><img src="images/Prerak%20Arya.png" alt="Mr Prerak Arya" loading="lazy"></div>
+    <div class="ext-body">
+     <span class="ext-tag">Centre Head, Cambridge Curriculum &amp; Product Solutions Lead</span>
+     <h3>Mr Prerak Arya</h3>
+     <p>Connects psychology and technology to shape TTEM(C), with the ethos of TALC-PHYSIS at its heart.</p>
+     <details>
+      <summary>Read full profile</summary>
+      <p>He brings together a psychologist’s understanding and a technologist’s expertise. He has been instrumental in shaping the technology behind TTEM(C), bringing the framework to life while keeping the ethos of TALC-PHYSIS at its heart.</p>
+     </details>
+    </div>
    </article>
   </div>
  </div>
