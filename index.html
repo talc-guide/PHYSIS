@@ -251,6 +251,18 @@ em{color:var(--ink);font-weight:700;font-style:normal}
   aspect-ratio:4/3;
   transition:transform .5s ease;
 }
+.photo-collage{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  gap:10px;
+  aspect-ratio:4/3;
+}
+.photo-collage img{
+  aspect-ratio:auto;
+  border-radius:10px;
+  box-shadow:0 8px 20px rgba(13,27,42,.1);
+}
 .photo:hover img{transform:scale(1.02)}
 .photo.tall img{aspect-ratio:4/5}
 
@@ -536,9 +548,16 @@ main>section#partners>.wrap{width:min(94%, 1480px)}
   gap:clamp(10px, 1vw, 14px);
   align-items:start;
 }
-.core-card{min-width:0;align-self:start;display:grid;grid-template-columns:minmax(110px, 30%) minmax(0,1fr)}
-.core-card .ext-media{height:auto;aspect-ratio:4/5}
-.core-card .ext-body{padding:clamp(10px, 1vw, 14px);gap:5px}
+.core-card{min-width:0;align-self:start;display:grid;grid-template-columns:minmax(110px, 27%) minmax(0,1fr)}
+.core-card .ext-media{
+  width:clamp(110px, 11vw, 150px);
+  aspect-ratio:1;
+  align-self:center;
+  justify-self:center;
+  border-radius:50%;
+}
+.core-card .ext-media img{object-position:center 22%}
+.core-card .ext-body{padding:clamp(14px, 1.4vw, 20px);gap:6px}
 .core-card .ext-tag{
   min-height:2.9em;
   display:flex;
@@ -546,9 +565,8 @@ main>section#partners>.wrap{width:min(94%, 1480px)}
   font-size:clamp(10px, 0.22vw + 9px, 12px);
   line-height:1.45;
 }
-.core-card:nth-child(4) .ext-tag{min-height:2.9em;font-size:clamp(9px, 0.12vw + 8px, 9.5px);letter-spacing:.1em}
-.core-card .ext-body h3{font-size:clamp(17px, 0.45vw + 13px, 22px);margin:0}
-.core-card .ext-body p{font-size:clamp(12px, 0.15vw + 11px, 14px);line-height:1.45;margin:0}
+.core-card .ext-body h3{font-size:clamp(17px, 0.45vw + 13px, 22px);line-height:1.25;margin:0;color:var(--ink)}
+.core-card .ext-body p{font-size:clamp(12px, 0.15vw + 11px, 14px);line-height:1.5;margin:0;color:var(--muted)}
 .core-card details{font-size:13px}
 .core-card details summary{color:var(--gold-deep);font-weight:800;cursor:pointer}
 .core-card details p{margin-top:8px}
@@ -672,7 +690,7 @@ main>section#core-team>.wrap{width:min(96%, 1480px)}
      <a href="mailto:admissions@talcworld.com" class="channel-icon" title="Send Email" aria-label="Send Email">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2"/></svg>
      </a>
-     <a href="https://wa.me/919449825956" target="_blank" rel="noopener noreferrer" class="channel-icon" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+     <a href="https://wa.me/918951081948" target="_blank" rel="noopener noreferrer" class="channel-icon" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/></svg>
      </a>
     </div>
@@ -842,6 +860,10 @@ main>section#core-team>.wrap{width:min(96%, 1480px)}
     <div class="ext-media logo"><img src="images/healthland.png" alt="Healthland logo" loading="lazy"></div>
     <div class="ext-body"><span class="ext-tag">Health Services</span><h3>Healthland Hospitals</h3><p>Nurse and other health service providers.</p></div>
    </article>
+   <article class="ext-card">
+    <div class="ext-media"><img src="images/kalari.jpg" alt="Kalaripayattu training" loading="lazy"></div>
+    <div class="ext-body"><span class="ext-tag">Kalaripayattu</span><h3>Mr. Chandra Mohan Gurukkal</h3><p>He was trained under renowned Gurukkals such as Balachandra Menon Gurukkal and conducts Kalari class for our children. He works with children through structured Kalari training that develops movement, discipline, coordination, and traditional martial arts skills.</p></div>
+   </article>
   </div>
  </div>
 </section>
@@ -859,12 +881,8 @@ main>section#core-team>.wrap{width:min(96%, 1480px)}
     <div class="ext-body">
      <span class="ext-tag">Founder &amp; Director</span>
      <h3>Ms Latha G</h3>
-     <p>Championing child sensitivity and humanising education since 2007.</p>
-     <details>
-      <summary>Read full profile</summary>
-      <p>Latha has championed child sensitivity since 2007, bringing together postgraduate qualifications in Management and Psychology with expertise in Transactional Analysis (TA). A former consumer and market research professional, she combines respect for curriculum with a commitment to humanising education, guided by the belief that every child deserves to be a happy individual.</p>
-      <p>Nominated for Femina’s Social Impact Award for her work in Child Sensitivity, she draws on Educational and Developmental TA to support children’s learning, growth and emotional well-being. TALC - PHYSIS is her second venture in child sensitivity and education.</p>
-     </details>
+     <p>Latha has championed child sensitivity since 2007, bringing together postgraduate qualifications in Management and Psychology with expertise in Transactional Analysis (TA). A former consumer and market research professional, she combines respect for curriculum with a commitment to humanising education, guided by the belief that every child deserves to be a happy individual.</p>
+     <p>Nominated for Femina’s Social Impact Award for her work in Child Sensitivity, she draws on Educational and Developmental TA to support children’s learning, growth and emotional well-being. TALC - PHYSIS is her second venture in child sensitivity and education.</p>
     </div>
    </article>
    <article class="ext-card core-card rv">
@@ -872,12 +890,8 @@ main>section#core-team>.wrap{width:min(96%, 1480px)}
     <div class="ext-body">
      <span class="ext-tag">Chief Executive Officer (CEO)</span>
      <h3>Mr Mobin V Mathew</h3>
-     <p>Leads with empathy, bringing together psychology and special-education knowledge to support children and families.</p>
-     <details>
-      <summary>Read full profile</summary>
-      <p>Mobin holds a Master’s degree in Psychology, a Bachelor’s degree in Philosophy from DeSales University, Pennsylvania, and a Bachelor’s degree in Economics, Sociology and Psychology. He also holds a certification in Specific Learning Disabilities (SLD).</p>
-      <p>He brings empathy and deep respect for children and parents to his leadership, helping shape the foundation of TALC-PHYSIS. His knowledge of special education, combined with a deep understanding of children, creates meaningful possibilities for every child’s learning and growth. His skill in training and developing mentors ensures that the organisation’s ethos is carried forward as it grows.</p>
-     </details>
+     <p>Mobin holds a Master’s degree in Psychology, a Bachelor’s degree in Philosophy from DeSales University, Pennsylvania, and a Bachelor’s degree in Economics, Sociology and Psychology. He also holds a certification in Specific Learning Disabilities (SLD).</p>
+     <p>He brings empathy and deep respect for children and parents to his leadership, helping shape the foundation of TALC-PHYSIS. His knowledge of special education, combined with a deep understanding of children, creates meaningful possibilities for every child’s learning and growth. His skill in training and developing mentors ensures that the organisation’s ethos is carried forward as it grows.</p>
     </div>
    </article>
    <article class="ext-card core-card rv">
@@ -885,11 +899,7 @@ main>section#core-team>.wrap{width:min(96%, 1480px)}
     <div class="ext-body">
      <span class="ext-tag">Centre Head, Harlur &amp; L&amp;D Lead</span>
      <h3>Mr Ashith</h3>
-     <p>Brings the founders’ vision of love and acceptance into everyday practice across the organisation.</p>
-     <details>
-      <summary>Read full profile</summary>
-      <p>He brings a calm and gentle presence that resonates across the team. He has been instrumental in translating the founders’ vision of love and acceptance into everyday practice, ensuring that the ethos of TALC-PHYSIS is embodied across the organisation.</p>
-     </details>
+     <p>He brings a calm and gentle presence that resonates across the team. He has been instrumental in translating the founders’ vision of love and acceptance into everyday practice, ensuring that the ethos of TALC-PHYSIS is embodied across the organisation.</p>
     </div>
    </article>
    <article class="ext-card core-card rv">
@@ -897,11 +907,7 @@ main>section#core-team>.wrap{width:min(96%, 1480px)}
     <div class="ext-body">
      <span class="ext-tag">Centre Head, Cambridge Curriculum &amp; Product Solutions Lead</span>
      <h3>Mr Prerak Arya</h3>
-     <p>Connects psychology and technology to shape TTEM(C), with the ethos of TALC-PHYSIS at its heart.</p>
-     <details>
-      <summary>Read full profile</summary>
-      <p>He brings together a psychologist’s understanding and a technologist’s expertise. He has been instrumental in shaping the technology behind TTEM(C), bringing the framework to life while keeping the ethos of TALC-PHYSIS at its heart.</p>
-     </details>
+     <p>He brings together a psychologist’s understanding and a technologist’s expertise. He has been instrumental in shaping the technology behind TTEM(C), bringing the framework to life while keeping the ethos of TALC-PHYSIS at its heart.</p>
     </div>
    </article>
   </div>
@@ -941,7 +947,12 @@ main>section#core-team>.wrap{width:min(96%, 1480px)}
 <!-- PROGRESS -->
 <section class="alt" id="progress">
  <div class="wrap split">
-  <div class="photo rv"><img src="images/ball.jpg" alt="Children relaxing in colourful reading nooks" loading="lazy"></div>
+  <div class="photo photo-collage rv" aria-label="Children participating in meaningful learning activities">
+   <img src="images/label 1.jpg" alt="Children participating in a learning activity" loading="lazy">
+   <img src="images/label 2.jpg" alt="Children developing skills through play" loading="lazy">
+   <img src="images/label 3.jpg" alt="Children learning together" loading="lazy">
+   <img src="images/label 4.jpg" alt="Children engaged in a daily activity" loading="lazy">
+  </div>
   <div class="rv">
    <span class="label">Meaningful Progress</span>
    <h2 class="title">Progress should be visible, meaningful, and relevant to the child's life.</h2>
@@ -1092,7 +1103,7 @@ main>section#core-team>.wrap{width:min(96%, 1480px)}
   <div class="footer-contact">
    <h3>Corporate Office</h3>
    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=24%2C+3rd+Cross+Rd%2C+B+K+Abbaiah+Layout%2C+Anjappa+Layout%2C+B+Narayanapura%2C+Mahadevapura%2C+Bengaluru%2C+Karnataka+560093">24, 3rd Cross Rd, B K Abbaiah Layout, Anjappa Layout, B Narayanapura, Mahadevapura, Bengaluru, Karnataka 560093</a></p>
-   <p><a href="tel:+918951081948">Tel: +91 89510 81948</a></p>
+   <p><a href="tel:+918951081948">Tel: 89510 81948</a></p>
    <p><a href="mailto:admissions@talcworld.com">admissions@talcworld.com</a></p>
    <p><a href="tel:+918951081948">Reach out between 4 - 7 PM for admissions</a></p>
    <div class="footer-social" aria-label="Social media">
